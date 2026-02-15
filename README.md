@@ -39,6 +39,7 @@ graph TD
     end
     
     Operator([Support Engineer]) -->|Approve/Chat| CloudRun_Frontend
+```
 
 Frontend: Next.js (TypeScript), Tailwind CSS, Firebase Auth/Firestore
 
