@@ -8,8 +8,7 @@ Google Cloud AI Hackathon (GenAI/RAG) 提出プロジェクト
 | **Zenn 記事** | [解説記事を読む](https://zenn.dev/mirai_techlab/articles/b18f86074bd101) |
 | **3分 デモ動画** | [YouTubeで見る](https://youtu.be/ES8QfQEsvi0) |
 
-![Top Image](https://via.placeholder.com/800x400?text=CAToC+Dashboard+Screenshot)
-*(※ここにスクリーンショット画像があれば貼るとベストです)*
+![CAToC Architecture Sketch](./docs/images/dashboard.png)
 
 ※プロダクトURLから動作確認を行う場合は、原則"support@neuroring.jp"宛てにメールをお願いします。
 "0sasurai0@gmail.com"から返信がきますが、"0sasurai0@gmail.com"宛てにそのまま返信いただいても問題ございません。
@@ -28,14 +27,14 @@ CAToCは、メールを受信した瞬間に「ログ解析・ドラフト作成
 graph TD
     User([Customer]) -->|Email| Gmail
     Gmail -->|Push| PubSub
-    PubSub -->|Webhook| CloudRun_Backend[Backend (FastAPI)]
+    PubSub -->|Webhook| CloudRun_Backend["Backend (FastAPI)"]
     
     subgraph "Google Cloud Platform"
-        CloudRun_Backend <-->|RAG Search| VertexAI_Search[Vertex AI Search]
-        CloudRun_Backend <-->|LLM| Gemini[Vertex AI (Gemini 2.5 Flash)]
+        CloudRun_Backend <-->|RAG Search| VertexAI_Search["Vertex AI Search"]
+        CloudRun_Backend <-->|LLM| Gemini["Vertex AI (Gemini 2.5 Flash)"]
         CloudRun_Backend <-->|DB| Firestore
         
-        CloudRun_Frontend[Frontend (Next.js)] <-->|Realtime Sync| Firestore
+        CloudRun_Frontend["Frontend (Next.js)"] <-->|Realtime Sync| Firestore
         CloudRun_Frontend -->|API| CloudRun_Backend
     end
     
