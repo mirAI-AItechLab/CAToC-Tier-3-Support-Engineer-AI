@@ -1,15 +1,18 @@
-# CAToC (Support Cockpit) - Tier-3 サポートエンジニアオーケストレーションエージェント
+# CAToC (Support Cockpit) - Tier-3 サポートエンジニア業務のオーケストレーションAI
 
 Google Cloud AI Hackathon (GenAI/RAG) 提出プロジェクト
 
 | 項目 | URL |
 | --- | --- |
-| **Demo App** | [Click here to Open App](<DEPLOY_URL>) |
-| **Zenn Article** | [解説記事を読む](<ZENN_URL>) |
-| **Demo Video** | [YouTubeで見る](<YOUTUBE_URL>) |
+| **プロダクト URL** | [Click here to Open App](https://tier3-frontend-541297450514.us-central1.run.app/) |
+| **Zenn 記事** | [解説記事を読む](https://zenn.dev/mirai_techlab/articles/b18f86074bd101) |
+| **3分 デモ動画** | [YouTubeで見る](https://youtu.be/ES8QfQEsvi0) |
 
 ![Top Image](https://via.placeholder.com/800x400?text=CAToC+Dashboard+Screenshot)
 *(※ここにスクリーンショット画像があれば貼るとベストです)*
+
+※プロダクトURLから動作確認を行う場合は、原則"support@neuroring.jp"宛てにメールをお願いします。
+"0sasurai0@gmail.com"から返信がきますが、"0sasurai0@gmail.com"宛てにそのまま返信いただいても問題ございません。
 
 ## 🚀 プロダクト概要
 **"The Invisible Tier-3 Engineer"**
@@ -80,55 +83,30 @@ Case Detail (Editor Agent):
 
 🔧 ローカル開発セットアップ
 前提条件
-
 Google Cloud プロジェクト (Vertex AI, Cloud Run有効化済み)
-
 Firebase プロジェクト
-
-Gmail API 認証情報 (token.json)
 
 手順
 
 1. リポジトリのクローン
-
-code
-Bash
-download
-content_copy
-expand_less
 git clone <YOUR_REPO_URL>
 cd <REPO_NAME>
 
 2. 環境変数の設定
 以下のファイルを所定の場所に配置してください。
-
 backend/.env : GCPプロジェクト情報、API設定
-
 .env.local : Firebase設定
-
 backend/token.json : Gmail API認証情報
 
 3. Backend起動
-
-code
-Bash
-download
-content_copy
-expand_less
 cd backend
 pip install -r requirements.txt
 uvicorn main:app --reload
 
 4. Frontend起動
-
-code
-Bash
-download
-content_copy
-expand_less
 # 別ターミナルでルートディレクトリにて実行
 npm install
 npm run dev
-📜 ライセンス
 
+📜 ライセンス
 MIT License
